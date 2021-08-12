@@ -9,12 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 @MappedSuperclass
 public class BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) // TODO: Learn others
-	Integer id;
+	Long id;
 	
 	@Column(name = "creation_time")
 	Date creationTime;
